@@ -1,13 +1,13 @@
 # Communication Architecture for an Autonomous Mobile Robot
 
-## 🧭 Project Overview
+## Project Overview
 
 This project aims to design and simulate a robust **communication architecture** for an **exploration mobile robot** operating in constrained environments such as tunnels.  
 The approach relies on a **mobile ad hoc network (MANET)** using the **OLSR routing protocol** and modern **Wi-Fi communication technologies**.
 
 ---
 
-## 🎯 Objectives
+## Objectives
 
 - Address communication challenges in infrastructure-less environments (tunnels, mines, disaster zones).  
 - Propose a MANET-based solution ensuring reliable and adaptive robot-to-robot communication.  
@@ -15,7 +15,7 @@ The approach relies on a **mobile ad hoc network (MANET)** using the **OLSR rout
 
 ---
 
-## 🧰 Technologies Used
+## Technologies Used
 
 - **ns-3** — Network simulator for MANET modeling and testing.  
 - **Wireshark + Pcap** — Packet capture and network analysis.  
@@ -33,7 +33,7 @@ The approach relies on a **mobile ad hoc network (MANET)** using the **OLSR rout
 
 ---
 
-## 🧩 Implementation Process
+## Implementation Process
 
 1. Preliminary study of communication architectures for mobile robotics.  
 2. Selection of technologies: MANET + Wi-Fi 802.11n + OLSR.  
@@ -43,7 +43,7 @@ The approach relies on a **mobile ad hoc network (MANET)** using the **OLSR rout
 
 ---
 
-## ⚙️ ns-3 Simulation Optimization
+## ns-3 Simulation Optimization
 
 To improve realism and performance:
 
@@ -54,7 +54,7 @@ To improve realism and performance:
 
 ---
 
-## 📊 Results
+## Results
 
 - Operational MANET communication in simulated tunnel conditions.  
 - Demonstrated stability of Wi-Fi 802.11n under constrained environments.  
@@ -63,14 +63,14 @@ To improve realism and performance:
 
 ---
 
-## 🧠 Context & Motivation
+## Context & Motivation
 
 The project addresses the need for **reliable communication systems** in **robotic exploration of underground environments**.  
 In the absence of traditional infrastructure, **MANET networks** provide flexibility, scalability, and resilience.
 
 ---
 
-## ⚠️ Limitations & Challenges
+## Limitations & Challenges
 
 **Limitations:**
 - Random mobility cannot fully represent physical tunnel constraints.  
@@ -82,7 +82,7 @@ In the absence of traditional infrastructure, **MANET networks** provide flexibi
 
 ---
 
-## 🚀 Potential Applications
+## Potential Applications
 
 - Robotic exploration in tunnels, mines, and caves.  
 - Rapid deployment of emergency communication networks.  
