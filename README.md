@@ -1,118 +1,91 @@
-# Mise en place d'une architecture de communication pour un robot mobile explorateur
+# Communication Architecture for an Autonomous Mobile Robot
 
-## Description du projet
+## 🧭 Project Overview
 
-Ce projet a pour objectif de concevoir et simuler une architecture de communication robuste pour un robot mobile explorateur, destiné à évoluer dans des environnements contraints comme les tunnels.  
-L'approche repose sur la création d'un réseau mobile ad hoc (MANET) utilisant le protocole de routage OLSR et des technologies modernes de communication sans fil.
-
----
-
-## Pourquoi ce projet ?
-
-- Répondre aux défis de communication dans des environnements sans infrastructure (tunnels, mines, zones sinistrées).
-- Proposer une solution basée sur les réseaux MANET pour garantir une communication stable et fiable entre robots mobiles.
-- Exploiter les dernières avancées technologiques pour simuler des scénarios réalistes.
+This project aims to design and simulate a robust **communication architecture** for an **exploration mobile robot** operating in constrained environments such as tunnels.  
+The approach relies on a **mobile ad hoc network (MANET)** using the **OLSR routing protocol** and modern **Wi-Fi communication technologies**.
 
 ---
 
-## Table des matières
+## 🎯 Objectives
 
-- [Technologies utilisées](#technologies-utilisées)
-- [Processus de réalisation](#processus-de-réalisation)
-- [Optimisation du script ns-3](#optimisation-du-script-ns-3)
-- [Résultats obtenus](#résultats-obtenus)
-- [Motivations et contexte](#motivations-et-contexte)
-- [Limitations et défis](#limitations-et-défis)
-- [Utilisation prévue](#utilisation-prévue)
+- Address communication challenges in infrastructure-less environments (tunnels, mines, disaster zones).  
+- Propose a MANET-based solution ensuring reliable and adaptive robot-to-robot communication.  
+- Leverage network simulation to analyze performance under realistic mobility and propagation conditions.
 
 ---
 
-## Technologies utilisées
+## 🧰 Technologies Used
 
-- **ns-3** : simulateur pour modéliser et analyser les réseaux MANETs.
-- **Wireshark + Pcap** : outils de capture et d'analyse des paquets réseau.
-- **Wi-Fi (802.11n)** : technologie sans fil à haut débit et meilleure portée, idéale pour les environnements souterrains.
+- **ns-3** — Network simulator for MANET modeling and testing.  
+- **Wireshark + Pcap** — Packet capture and network analysis.  
+- **Wi-Fi (802.11n)** — High-throughput wireless standard suitable for underground communications.
 
-### Modèles de propagation :
-- **Friis** (espace libre)
-- **LogDistance** (perte de signal avec obstacles)
+### Propagation Models
+- **Friis model** — Free-space propagation.
+- **LogDistance model** — Signal attenuation with distance and obstacles.
 
-### Modèle de mobilité :
-- **RandomWaypointMobilityModel** pour simuler des déplacements réalistes.
+### Mobility Model
+- **RandomWaypointMobilityModel** — Realistic simulation of mobile robots in tunnels.
 
-### Protocole de routage :
-- **OLSR (Optimized Link State Routing)**, adapté aux réseaux mobiles ad hoc.
-
----
-
-## Processus de réalisation
-
-1. Étude préalable des architectures de communication en robotique.
-2. Choix technologiques :
-   - Architecture Ad Hoc (MANET) avec Wi-Fi 802.11n.
-   - Protocole de routage OLSR.
-3. Implémentation sur ns-3 :
-   - Configuration du Wi-Fi, mobilité, propagation et routage.
-4. Simulation et tests :
-   - Captures réseau via Wireshark.
-   - Analyse des performances (débit, latence, pertes de paquets).
-5. Analyse critique :
-   - Évaluation de la robustesse du réseau selon différents scénarios.
+### Routing Protocol
+- **OLSR (Optimized Link State Routing)** — Efficient routing for mobile ad hoc networks.
 
 ---
 
-## Optimisation du script ns-3
+## 🧩 Implementation Process
 
-Pour améliorer la simulation et refléter les contraintes réelles des environnements souterrains :
-
-- **Wi-Fi (WIFI_STANDARD_80211n)** :
-  - Meilleure portée et débits plus élevés, adaptés aux tunnels avec forte atténuation de signal.
-
-- **Propagation Loss Models** :
-  - **Friis** pour l'espace libre.
-  - **LogDistance** pour simuler les pertes dans des environnements avec obstacles.
-
-- **RandomWaypointMobilityModel** :
-  - Déplacement réaliste des robots dans le tunnel, avec pauses et variations de vitesse.
-
-- **Protocole OLSR** :
-  - Découverte rapide et efficace des routes dans un réseau mobile.
-  - Réduction de la latence et amélioration de la résilience du réseau face à la mobilité.
+1. Preliminary study of communication architectures for mobile robotics.  
+2. Selection of technologies: MANET + Wi-Fi 802.11n + OLSR.  
+3. ns-3 setup and configuration (mobility, propagation, routing).  
+4. Simulation, data capture (Wireshark), and performance analysis.  
+5. Evaluation of throughput, latency, and packet loss.
 
 ---
 
-## Résultats obtenus
+## ⚙️ ns-3 Simulation Optimization
 
-- Réseau MANET opérationnel dans un environnement simulé.
-- Démonstration de la capacité du Wi-Fi 802.11n à maintenir la communication dans des tunnels.
-- Bonne résilience du protocole OLSR malgré une forte mobilité.
-- Optimisation des paramètres réseau pour minimiser la perte de paquets et la latence.
+To improve realism and performance:
 
----
-
-## Motivations et contexte
-
-Le projet a été inspiré par le besoin croissant de communications robustes pour les robots autonomes en exploration souterraine.  
-Dans les contextes où les infrastructures classiques sont absentes ou détruites, un réseau MANET offre une solution souple, adaptable et fiable.
+- **Wi-Fi 802.11n**: increased range and throughput.  
+- **Friis + LogDistance models**: combined propagation effects.  
+- **RandomWaypointMobilityModel**: variable speeds and pauses.  
+- **OLSR**: quick route discovery and adaptive reconvergence.
 
 ---
 
-## Limitations et défis
+## 📊 Results
 
-### Limitations :
-- La mobilité aléatoire ne capture pas toutes les contraintes physiques des tunnels (virages serrés, dénivelés, obstacles imprévus).
-- La simulation ne prend pas en compte les interférences multi-chemin complexes.
-
-### Défis :
-- Ajustement précis des paramètres de mobilité pour éviter des artefacts de simulation (regroupements non réalistes).
-- Gestion de la consommation d'énergie liée à l'émission fréquente de messages OLSR.
+- Operational MANET communication in simulated tunnel conditions.  
+- Demonstrated stability of Wi-Fi 802.11n under constrained environments.  
+- OLSR protocol provided robust routing with minimal latency.  
+- Optimized parameters reduced packet loss and improved throughput.
 
 ---
 
-## Utilisation prévue
+## 🧠 Context & Motivation
 
-- Exploration robotique dans des environnements souterrains (mines, tunnels, grottes).
-- Déploiement rapide de réseaux d'urgence en l'absence d'infrastructures de communication.
-- Simulations avancées pour l'étude de protocoles de routage dans des environnements dynamiques et contraints.
+The project addresses the need for **reliable communication systems** in **robotic exploration of underground environments**.  
+In the absence of traditional infrastructure, **MANET networks** provide flexibility, scalability, and resilience.
+
+---
+
+## ⚠️ Limitations & Challenges
+
+**Limitations:**
+- Random mobility cannot fully represent physical tunnel constraints.  
+- Complex multi-path interferences not modeled.
+
+**Challenges:**
+- Fine-tuning mobility parameters to avoid unrealistic clustering.  
+- Managing energy consumption from frequent OLSR messaging.
+
+---
+
+## 🚀 Potential Applications
+
+- Robotic exploration in tunnels, mines, and caves.  
+- Rapid deployment of emergency communication networks.  
+- Research on routing protocols in dynamic and constrained environments.
 
 ---
